@@ -3,6 +3,9 @@ fn main() {
 
     takes_ownership(s);
 
+    /* Can't build. s is moved in take_ownership() */
+    /* println!("string = {}", s); */
+
     let x = 5;
 
     makes_copy(x);
