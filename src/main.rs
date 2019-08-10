@@ -7,6 +7,8 @@ fn main() {
 
     let s3 = takes_and_gives_back(s2);
     println!("s3 = {}", s3 );
+    /* Can't build */
+    /* println!("s2 = {}", s2 ); */
 }
 
 fn gives_ownership() -> String {
