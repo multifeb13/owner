@@ -1,22 +1,14 @@
 fn main() {
-    let s1 = gives_ownership();
-    println!("s1 = {}", s1 );
+    let s1 = String::from("Hello");
 
-    let s2 = String::from("Hello2");
-    println!("s2 = {}", s2 );
+    let (s2, len) = calculate_length(s1);
 
-    let s3 = takes_and_gives_back(s2);
-    println!("s3 = {}", s3 );
-    /* Can't build */
-    /* println!("s2 = {}", s2 ); */
+    println!("The length of '{}' is {}.", s2, len);
 }
 
-fn gives_ownership() -> String {
-    let some_string = String::from("Hello1");
+fn calculate_length(s: String) -> (String, usize) {
 
-    some_string
-}
+    let length = s.len();
 
-fn takes_and_gives_back(a_string: String) -> String {
-    a_string
+    (s, length)
 }
