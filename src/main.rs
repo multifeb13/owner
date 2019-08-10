@@ -1,20 +1,20 @@
 fn main() {
-    let s = String::from("Hello");
+    let s1 = gives_ownership();
+    println!("s1 = {}", s1 );
 
-    takes_ownership(s);
+    let s2 = String::from("Hello2");
+    println!("s2 = {}", s2 );
 
-    /* Can't build. s is moved in take_ownership() */
-    /* println!("string = {}", s); */
-
-    let x = 5;
-
-    makes_copy(x);
+    let s3 = takes_and_gives_back(s2);
+    println!("s3 = {}", s3 );
 }
 
-fn takes_ownership(some_string: String) {
-    println!("string = {}", some_string);
+fn gives_ownership() -> String {
+    let some_string = String::from("Hello1");
+
+    some_string
 }
 
-fn makes_copy(some_integer: i32) {
-    println!("integer = {}", some_integer);
+fn takes_and_gives_back(a_string: String) -> String {
+    a_string
 }
