@@ -1,24 +1,17 @@
 fn main() {
-    let mut s = String::from("Hello");
+    let s = String::from("Hello");
 
-    s.push_str("!, world!");
+    takes_ownership(s);
 
-    println!("{}", s);
-/* -------------------- */
     let x = 5;
-    let y = x;
-    println!("x = {} y = {}", x, y);
 
-    /* Can't build */
-    /*
-    let s1 = String::from("Hello");
-    let s2 = s1;
-    println!("{}, world!", s1);
-    */
+    makes_copy(x);
+}
 
-    /* Can build */
-    let s1 = String::from("Hello");
-    let s2 = s1.clone();
+fn takes_ownership(some_string: String) {
+    println!("string = {}", some_string);
+}
 
-    println!("s1 = {}, s2 = {}", s1, s2);
+fn makes_copy(some_integer: i32) {
+    println!("integer = {}", some_integer);
 }
